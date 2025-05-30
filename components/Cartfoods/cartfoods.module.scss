@@ -1,0 +1,168 @@
+.Cart {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2); 
+  }
+}
+
+.imageWraper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+
+  @media (min-width: 601px) {
+    height: 200px;
+  }
+
+  @media (min-width: 1025px) {
+    height: 220px;
+  }
+}
+
+.imagefood {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.foodTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: start;
+  color: #2e7d32;
+
+  @media (min-width: 601px) {
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+}
+
+.actionButtons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px 12px;
+
+  @media (min-width: 601px) {
+    padding: 0 14px 14px;
+  }
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #777;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #e53935;
+  }
+
+  &.liked {
+    color: #e53935 !important;
+    animation: pulse 0.5s ease;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.shareButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #777;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #43a047; 
+  }
+}
+
+.summaryContainer {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+}
+
+.foodSummary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.moreLink {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #388e3c;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.badgesContainer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.badge {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metaInfo {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 6px;
+  text-align: center;
+  padding: 1rem;
+}

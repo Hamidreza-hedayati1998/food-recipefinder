@@ -1,0 +1,51 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 3rem;
+  }
+  
+  .empty {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 2rem;
+    
+    p {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      
+      &:first-child {
+        font-weight: 500;
+        color: #2c3e50;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .title {
+      font-size: 1.8rem;
+    }
+  }
