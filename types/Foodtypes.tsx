@@ -18,7 +18,7 @@
     image: string;
     readyInMinutes?: number;
     servings?: number;
-    summary: string ;
+    summary?: string ;
     veryPopular?: boolean;
     cheap?: boolean;
     dairyFree?: boolean;

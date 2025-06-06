@@ -3,7 +3,7 @@ import { Food, FoodApiResponse } from '../types/Foodtypes';
 import { GetStaticProps, NextPage } from 'next';
 import styles from '../styles/home.module.scss';
 import { useFavorite } from '../context/FavoriteContext';
-
+import { useState } from 'react';
 interface HomeProps {
   foods: Food[];
   error?: string;
@@ -11,7 +11,8 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ foods, error }) => {
   const { favorites, toggleFavorite } = useFavorite();
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
   const handleLike = (foodId: number) => {
     const food = foods.find((f) => f.id === foodId);
     if (food) toggleFavorite(food);
@@ -39,18 +40,38 @@ const Home: NextPage<HomeProps> = ({ foods, error }) => {
   if (error) {
     return <div className={styles.errorMessage}>{error}</div>;
   }
-
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentFoods = foods.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(foods.length / itemsPerPage);
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}>Featured Recipes</h1>
       <ListFood
-        foods={foods}
+        foods={currentFoods}
         onLike={handleLike}
         onShare={handleShare}
         favorites={favorites.map((f) => f.id)}
       />
+    {totalPages > 1 && (
+    <div className={styles.pagination}>
+      {Array.from({ length: totalPages }, (_, index) => (
+        <button
+          key={index + 1}
+          onClick={() => setCurrentPage(index + 1)}
+          className={`${styles.pageButton} ${
+            currentPage === index + 1 ? styles.activePage : ''
+          }`}
+        >
+          {index + 1}
+        </button>
+      ))}
     </div>
+  )}
+    </div>
+    
   );
+
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {

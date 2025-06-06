@@ -28,4 +28,31 @@
     font-weight: 500;
   }
   
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+  }
   
+  .pageButton {
+    background-color: rgba(238, 238, 238,0.2);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
+  
+    &:hover {
+      background-color: rgba(238, 238, 238,0.5);
+      backdrop-filter: blur(10px);
+    }
+  }
+  
+  .activePage {
+    background-color: rgba(24, 137, 6,0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+  }

@@ -90,16 +90,16 @@ const Searchfood = ({ foods, onSearchResults }: SearchComponentProps) => {
               placeholder="Search for recipes, ingredients..."
               className={styles.searchInput}
             />
-            <button
+              <button
               onClick={handleCloseSearch}
               className={styles.closeButton}
               aria-label="Close search"
             >
-              <FiX />
+             <FiX />
             </button>
           </div>
 
-          
+
           <div className={styles.resultsContainer}>
             <div className={styles.resultsCount}>
               {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found
