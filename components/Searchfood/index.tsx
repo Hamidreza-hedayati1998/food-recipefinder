@@ -3,9 +3,9 @@ import { FiSearch, FiX } from 'react-icons/fi';
 import styles from './searchfood.module.scss';
 import { Food } from '../../types/Foodtypes';
 import Link from 'next/link';
+
 interface SearchComponentProps {
   foods: Food[];
-  id: number;
   onSearchResults: (results: Food[]) => void;
 }
 

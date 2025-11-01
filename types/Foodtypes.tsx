@@ -27,8 +27,8 @@
     vegan?: boolean;  
     veryHealthy?: boolean;     
     aggregateLikes?: number;
-    onLike?: (id: number) => void;
-    onShare?: (id: number) => void;
+    onLike: (id: number) => void;
+    onShare: (id: number) => void;
     isLiked?: boolean;
   }
 

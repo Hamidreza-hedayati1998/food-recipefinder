@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FaHeart, FaRegHeart, FaShare } from 'react-icons/fa';
+import { FaHeart, FaShareAlt } from 'react-icons/fa';
+import { FaRegHeart } from "react-icons/fa6";
 import styles from './cartfoods.module.scss';
 import { CartFoodsProps } from '../../types/Foodtypes';
 
@@ -82,7 +83,7 @@ const CartFoods = ({
           className={`${styles.likeButton} ${isLiked ? styles.liked : ''}`}
           aria-label={isLiked ? 'Remove from favorites' : 'Add to favorites'}
         >
-          {isLiked ? <FaHeart /> : <FaRegHeart />}
+         {isLiked ? <FaHeart /> : <FaRegHeart />}
         </button>
         
         <button 
@@ -90,7 +91,7 @@ const CartFoods = ({
           className={styles.shareButton}
           aria-label="Share this food"
           >
-          <FaShare />
+         <FaShareAlt />
         </button>
       </div>
     </div>

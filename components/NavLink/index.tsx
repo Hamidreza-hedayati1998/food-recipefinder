@@ -1,7 +1,8 @@
+"use client"
+import  { ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { ReactNode } from 'react';
-import styles from './NavLink.module.scss';
+import styles from './navlink.module.scss';
 
 interface NavLinkProps {
   href: string;
