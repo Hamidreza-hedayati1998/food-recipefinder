@@ -1,3 +1,4 @@
+"use client"
 import ListFood from '../components/ListFood';
 import { Food, FoodApiResponse } from '../types/Foodtypes';
 import { GetStaticProps, NextPage } from 'next';

@@ -1,3 +1,4 @@
+"use client"
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Food } from '../../types/Foodtypes';
 import styles from './detail.module.scss';
